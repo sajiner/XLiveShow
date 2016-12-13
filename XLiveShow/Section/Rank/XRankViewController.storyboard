@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="psU-Co-9no">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Rank View Controller-->
+        <scene sceneID="14x-tc-PPe">
+            <objects>
+                <viewController id="Csb-lL-Occ" customClass="XRankViewController" customModule="XLiveShow" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cvl-J0-k1Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Rq-Bo-4yV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oPx-XB-Mel">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fps-4q-QfN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6SC-FT-2vS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1424.8" y="-217.24137931034485"/>
+        </scene>
+        <!--排名-->
+        <scene sceneID="cmp-QF-EIw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="psU-Co-9no" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="排名" image="ranking-n" selectedImage="ranking-p" id="vKY-RZ-dwC"/>
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0ch-Vh-wEP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Csb-lL-Occ" kind="relationship" relationship="rootViewController" id="iLv-pl-E7r"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S17-2p-qTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="485.60000000000002" y="-217.24137931034485"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ranking-n" width="25" height="19"/>
+        <image name="ranking-p" width="25" height="19"/>
+    </resources>
+</document>
