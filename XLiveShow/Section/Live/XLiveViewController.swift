@@ -10,26 +10,74 @@ import UIKit
 
 class XLiveViewController: UIViewController {
 
+    fileprivate lazy var titleModels: [XTitleModel] = {
+        var titleModels = [XTitleModel]()
+        let path = Bundle.main.path(forResource: "types.plist", ofType: nil)
+        let dicts = NSArray(contentsOfFile: path!) as! [[String: Any]]
+        for dict in dicts {
+            titleModels.append(XTitleModel(dict: dict))
+        }
+        return titleModels
+    }()
+    
+    fileprivate lazy var titleStyle: XTitleStyle = {
+        $0.isScroll = true
+        $0.isShowBottomLine = true
+        return $0
+    }(XTitleStyle())
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        automaticallyAdjustsScrollViewInsets = false
+        
+        /// 导航栏设置
+        setupNavBar()
+        /// 内容设置
+        setupContentView()
     }
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+//MARK: - 内容设置
+extension XLiveViewController {
+   fileprivate func setupContentView() {
+        let pageFrame = CGRect(x: 0, y: kNavHeight, width: kScreenWidth, height: kScreenHeight - kNavHeight)
+        let childVcs = loadChildVcs()
+        let titles = titleModels.map{ $0.title }
+        let pageView = XPageView(frame: pageFrame, titles: titles, titleStyle: titleStyle, childVcs: childVcs, parentVc: self)
+        view.addSubview(pageView)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    /// 加载所有的子控制器
+    private func loadChildVcs() -> [UIViewController] {
+        var childVcs = [XProfileLiveViewController]()
+        for _ in 0..<titleModels.count {
+            let childVc = XProfileLiveViewController()
+            childVc.view.backgroundColor = UIColor.randomColor()
+            childVcs.append(childVc)
+        }
+        return childVcs
     }
-    */
+}
 
+//MARK: - 导航栏设置
+extension XLiveViewController {
+   fileprivate func setupNavBar() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named:"search_btn_follow"), style: .plain, target: self, action: #selector(XLiveViewController.gotoMyAttension))
+    
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"search_btn_follow"), style: .plain, target: self, action: #selector(XLiveViewController.gotoMyAttension))
+    
+        let searchFrame = CGRect(x: 0, y: 0, width: 200, height: 30)
+        let searchBar = UISearchBar(frame: searchFrame)
+        searchBar.placeholder = "主播昵称/房间号/链接"
+        searchBar.searchBarStyle = .minimal
+        navigationItem.titleView = searchBar
+        let searchFeild = searchBar.value(forKey: "_searchField") as? UITextField
+        searchFeild?.textColor = UIColor.white
+    }
+        
+   @objc private func gotoMyAttension() {
+        let attensionVc = XMyAttensionViewController()
+        attensionVc.navigationItem.title = "我的关注"
+        navigationController?.pushViewController(attensionVc, animated: true)
+    }
 }

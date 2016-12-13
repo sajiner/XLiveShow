@@ -34,10 +34,13 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kpa-oI-ccd" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="直播" image="live-n" selectedImage="live-p" id="uvy-yg-npd"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9oz-04-Oox">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="9oz-04-Oox">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="wHB-Ne-RDf">

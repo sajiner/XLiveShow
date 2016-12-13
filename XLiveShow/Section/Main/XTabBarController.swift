@@ -21,7 +21,7 @@ class XTabBarController: UITabBarController {
 }
 
 extension XTabBarController {
-    func addChildVc(_ storyboardName: String) {
+   fileprivate func addChildVc(_ storyboardName: String) {
         guard let childVc = UIStoryboard(name: storyboardName, bundle: nil).instantiateInitialViewController() else { return }
         addChildViewController(childVc)
     }
