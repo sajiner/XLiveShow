@@ -41,6 +41,7 @@
 		AEBC7CFA1E00E81300C6E137 /* KingFisherExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBC7CF91E00E81300C6E137 /* KingFisherExtension.swift */; };
 		AEBC7CFE1E00EFDB00C6E137 /* XRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBC7CFC1E00EFDB00C6E137 /* XRoomViewController.swift */; };
 		AEBC7CFF1E00EFDB00C6E137 /* XRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEBC7CFD1E00EFDB00C6E137 /* XRoomViewController.xib */; };
+		AEBC7D031E0126A700C6E137 /* XAnimatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBC7D021E0126A700C6E137 /* XAnimatorManager.swift */; };
 		C71E217850EEEFE66EEC8530 /* Pods_XLiveShow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB32206EF82CD25E17A72558 /* Pods_XLiveShow.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		AEBC7CF91E00E81300C6E137 /* KingFisherExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KingFisherExtension.swift; sourceTree = "<group>"; };
 		AEBC7CFC1E00EFDB00C6E137 /* XRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XRoomViewController.swift; sourceTree = "<group>"; };
 		AEBC7CFD1E00EFDB00C6E137 /* XRoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XRoomViewController.xib; sourceTree = "<group>"; };
+		AEBC7D021E0126A700C6E137 /* XAnimatorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XAnimatorManager.swift; sourceTree = "<group>"; };
 		BB32206EF82CD25E17A72558 /* Pods_XLiveShow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XLiveShow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -249,6 +251,7 @@
 			children = (
 				AEBC7CF11E00DCC100C6E137 /* XNetworkTools.swift */,
 				AEBC7CF91E00E81300C6E137 /* KingFisherExtension.swift */,
+				AEBC7D021E0126A700C6E137 /* XAnimatorManager.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				AEBC7CFA1E00E81300C6E137 /* KingFisherExtension.swift in Sources */,
 				AEBC7CE71E0031A500C6E137 /* XLiveListViewController.swift in Sources */,
 				AEBC7CCF1DFFC2CC00C6E137 /* XTitleModel.swift in Sources */,
+				AEBC7D031E0126A700C6E137 /* XAnimatorManager.swift in Sources */,
 				AEBC7CD61DFFC4C600C6E137 /* XPageView.swift in Sources */,
 				AEBC7CD81DFFC4C600C6E137 /* XTitleView.swift in Sources */,
 				AEBC7CD51DFFC4C600C6E137 /* XContentView.swift in Sources */,

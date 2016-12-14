@@ -61,8 +61,11 @@ extension XRoomViewController {
 }
 
 // MARK:- 底部菜单的点击
-extension XRoomViewController {
+extension XRoomViewController: XAnimatorManager {
     @IBAction func starItemClick(starItem : UIButton) {
+        starItem.isSelected = !starItem.isSelected
+        let point = CGPoint(x: starItem.center.x, y: view.bounds.height - starItem.bounds.height * 0.5)
+        starItem.isSelected ? startEmittering(point, cellCounts: 10) : stopEmittering()
     }
     
     @IBAction func moreItemClick() {
@@ -75,6 +78,17 @@ extension XRoomViewController {
     }
     
     @IBAction func chatItemClick() {
+        
     }
-    
 }
+
+
+
+
+
+
+
+
+
+
+
