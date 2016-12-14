@@ -24,6 +24,7 @@ class XLiveListViewController: UIViewController {
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         collectionView.register(UINib(nibName: "XLiveListCell", bundle: nil), forCellWithReuseIdentifier: kWaterfallCellID)
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.backgroundColor = UIColor.white
         return collectionView
     }()
@@ -61,6 +62,14 @@ extension XLiveListViewController: UICollectionViewDataSource {
         }
         
         return cell
+    }
+}
+
+extension XLiveListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let liveVc = XRoomViewController()
+        liveVc.liveModel = liveViewModel.liveModels[indexPath.item]
+        navigationController?.pushViewController(liveVc, animated: true)
     }
 }
 

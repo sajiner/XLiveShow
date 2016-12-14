@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,10 +30,10 @@
         <!--直播-->
         <scene sceneID="Cst-Nr-Ri9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kpa-oI-ccd" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kpa-oI-ccd" customClass="XNavigationController" customModule="XLiveShow" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="直播" image="live-n" selectedImage="live-p" id="uvy-yg-npd"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="9oz-04-Oox">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9oz-04-Oox">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

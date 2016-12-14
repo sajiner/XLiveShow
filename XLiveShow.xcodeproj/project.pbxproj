@@ -29,8 +29,6 @@
 		AEBC7CD61DFFC4C600C6E137 /* XPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBC7CD21DFFC4C600C6E137 /* XPageView.swift */; };
 		AEBC7CD71DFFC4C600C6E137 /* XTitleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBC7CD31DFFC4C600C6E137 /* XTitleStyle.swift */; };
 		AEBC7CD81DFFC4C600C6E137 /* XTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBC7CD41DFFC4C600C6E137 /* XTitleView.swift */; };
-		AEBC7CDD1DFFC9D500C6E137 /* XProfileLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBC7CDB1DFFC9D500C6E137 /* XProfileLiveViewController.swift */; };
-		AEBC7CDE1DFFC9D500C6E137 /* XProfileLiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEBC7CDC1DFFC9D500C6E137 /* XProfileLiveViewController.xib */; };
 		AEBC7CE31DFFCE3000C6E137 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBC7CE21DFFCE3000C6E137 /* UIColor+Extension.swift */; };
 		AEBC7CE51DFFCF8B00C6E137 /* XPageFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBC7CE41DFFCF8B00C6E137 /* XPageFlowLayout.swift */; };
 		AEBC7CE71E0031A500C6E137 /* XLiveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBC7CE61E0031A500C6E137 /* XLiveListViewController.swift */; };
@@ -41,6 +39,8 @@
 		AEBC7CF61E00E34B00C6E137 /* XLiveListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBC7CF51E00E34B00C6E137 /* XLiveListModel.swift */; };
 		AEBC7CF81E00E3A800C6E137 /* XLiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBC7CF71E00E3A800C6E137 /* XLiveViewModel.swift */; };
 		AEBC7CFA1E00E81300C6E137 /* KingFisherExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBC7CF91E00E81300C6E137 /* KingFisherExtension.swift */; };
+		AEBC7CFE1E00EFDB00C6E137 /* XRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBC7CFC1E00EFDB00C6E137 /* XRoomViewController.swift */; };
+		AEBC7CFF1E00EFDB00C6E137 /* XRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEBC7CFD1E00EFDB00C6E137 /* XRoomViewController.xib */; };
 		C71E217850EEEFE66EEC8530 /* Pods_XLiveShow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB32206EF82CD25E17A72558 /* Pods_XLiveShow.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,8 +71,6 @@
 		AEBC7CD21DFFC4C600C6E137 /* XPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPageView.swift; sourceTree = "<group>"; };
 		AEBC7CD31DFFC4C600C6E137 /* XTitleStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTitleStyle.swift; sourceTree = "<group>"; };
 		AEBC7CD41DFFC4C600C6E137 /* XTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTitleView.swift; sourceTree = "<group>"; };
-		AEBC7CDB1DFFC9D500C6E137 /* XProfileLiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XProfileLiveViewController.swift; sourceTree = "<group>"; };
-		AEBC7CDC1DFFC9D500C6E137 /* XProfileLiveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XProfileLiveViewController.xib; sourceTree = "<group>"; };
 		AEBC7CE21DFFCE3000C6E137 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		AEBC7CE41DFFCF8B00C6E137 /* XPageFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPageFlowLayout.swift; sourceTree = "<group>"; };
 		AEBC7CE61E0031A500C6E137 /* XLiveListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLiveListViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +81,8 @@
 		AEBC7CF51E00E34B00C6E137 /* XLiveListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLiveListModel.swift; sourceTree = "<group>"; };
 		AEBC7CF71E00E3A800C6E137 /* XLiveViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLiveViewModel.swift; sourceTree = "<group>"; };
 		AEBC7CF91E00E81300C6E137 /* KingFisherExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KingFisherExtension.swift; sourceTree = "<group>"; };
+		AEBC7CFC1E00EFDB00C6E137 /* XRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XRoomViewController.swift; sourceTree = "<group>"; };
+		AEBC7CFD1E00EFDB00C6E137 /* XRoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XRoomViewController.xib; sourceTree = "<group>"; };
 		BB32206EF82CD25E17A72558 /* Pods_XLiveShow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XLiveShow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -165,7 +165,7 @@
 		AE2130FD1DFF90490050C099 /* Live */ = {
 			isa = PBXGroup;
 			children = (
-				AEBC7CDA1DFFC9BC00C6E137 /* ProfileLive */,
+				AEBC7CFB1E00EFCC00C6E137 /* Room */,
 				AE2131181DFFA57B0050C099 /* MyAttension */,
 				AE21310A1DFF94ED0050C099 /* XLiveViewController.swift */,
 				AEBC7CE61E0031A500C6E137 /* XLiveListViewController.swift */,
@@ -253,15 +253,6 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
-		AEBC7CDA1DFFC9BC00C6E137 /* ProfileLive */ = {
-			isa = PBXGroup;
-			children = (
-				AEBC7CDB1DFFC9D500C6E137 /* XProfileLiveViewController.swift */,
-				AEBC7CDC1DFFC9D500C6E137 /* XProfileLiveViewController.xib */,
-			);
-			path = ProfileLive;
-			sourceTree = "<group>";
-		};
 		AEBC7CDF1DFFCDD500C6E137 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +267,15 @@
 				AEBC7CEB1E00329F00C6E137 /* XWaterfallFlowLayout.swift */,
 			);
 			path = XWaterfall;
+			sourceTree = "<group>";
+		};
+		AEBC7CFB1E00EFCC00C6E137 /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				AEBC7CFC1E00EFDB00C6E137 /* XRoomViewController.swift */,
+				AEBC7CFD1E00EFDB00C6E137 /* XRoomViewController.xib */,
+			);
+			path = Room;
 			sourceTree = "<group>";
 		};
 		F6EE95548B26AFE6D53F5CBC /* Pods */ = {
@@ -357,8 +357,8 @@
 				AEBC7CC11DFFBEAB00C6E137 /* types.plist in Resources */,
 				AE2131131DFF95220050C099 /* XMineViewController.storyboard in Resources */,
 				AE2131051DFF92210050C099 /* LaunchScreen.storyboard in Resources */,
+				AEBC7CFF1E00EFDB00C6E137 /* XRoomViewController.xib in Resources */,
 				AE2131091DFF94DF0050C099 /* XFindViewController.storyboard in Resources */,
-				AEBC7CDE1DFFC9D500C6E137 /* XProfileLiveViewController.xib in Resources */,
 				AE2130F11DFEF16A0050C099 /* Assets.xcassets in Resources */,
 				AE2130EF1DFEF16A0050C099 /* Main.storyboard in Resources */,
 			);
@@ -419,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEBC7CFE1E00EFDB00C6E137 /* XRoomViewController.swift in Sources */,
 				AEBC7CD71DFFC4C600C6E137 /* XTitleStyle.swift in Sources */,
 				AE2131171DFF9E200050C099 /* XNavigationController.swift in Sources */,
 				AE2131021DFF91500050C099 /* XTabBarController.swift in Sources */,
@@ -433,7 +434,6 @@
 				AEBC7CFA1E00E81300C6E137 /* KingFisherExtension.swift in Sources */,
 				AEBC7CE71E0031A500C6E137 /* XLiveListViewController.swift in Sources */,
 				AEBC7CCF1DFFC2CC00C6E137 /* XTitleModel.swift in Sources */,
-				AEBC7CDD1DFFC9D500C6E137 /* XProfileLiveViewController.swift in Sources */,
 				AEBC7CD61DFFC4C600C6E137 /* XPageView.swift in Sources */,
 				AEBC7CD81DFFC4C600C6E137 /* XTitleView.swift in Sources */,
 				AEBC7CD51DFFC4C600C6E137 /* XContentView.swift in Sources */,

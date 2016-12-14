@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +30,7 @@
         <!--排名-->
         <scene sceneID="cmp-QF-EIw">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="psU-Co-9no" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="psU-Co-9no" customClass="XNavigationController" customModule="XLiveShow" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="排名" image="ranking-n" selectedImage="ranking-p" id="vKY-RZ-dwC"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
