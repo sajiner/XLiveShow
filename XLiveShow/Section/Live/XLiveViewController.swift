@@ -9,6 +9,8 @@
 import UIKit
 
 class XLiveViewController: UIViewController {
+    
+    fileprivate var pageView: XPageView!
 
     fileprivate lazy var titleModels: [XTitleModel] = {
         var titleModels = [XTitleModel]()
@@ -43,15 +45,16 @@ extension XLiveViewController {
         let pageFrame = CGRect(x: 0, y: kNavHeight, width: kScreenWidth, height: kScreenHeight - kNavHeight)
         let childVcs = loadChildVcs()
         let titles = titleModels.map{ $0.title }
-        let pageView = XPageView(frame: pageFrame, titles: titles, titleStyle: titleStyle, childVcs: childVcs, parentVc: self)
+        pageView = XPageView(frame: pageFrame, titles: titles, titleStyle: titleStyle, childVcs: childVcs, parentVc: self)
         view.addSubview(pageView)
     }
     
     /// 加载所有的子控制器
     private func loadChildVcs() -> [UIViewController] {
-        var childVcs = [XProfileLiveViewController]()
-        for _ in 0..<titleModels.count {
-            let childVc = XProfileLiveViewController()
+        var childVcs = [XLiveListViewController]()
+        for titleModel in titleModels {
+            let childVc = XLiveListViewController()
+            childVc.titleModel = titleModel
             childVc.view.backgroundColor = UIColor.randomColor()
             childVcs.append(childVc)
         }

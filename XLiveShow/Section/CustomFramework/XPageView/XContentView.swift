@@ -38,6 +38,9 @@ class XContentView: UIView {
         super.init(frame: frame)
         
         addSubview(collectionView)
+        for vc in childVcs {
+            parentVc.addChildViewController(vc)
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
