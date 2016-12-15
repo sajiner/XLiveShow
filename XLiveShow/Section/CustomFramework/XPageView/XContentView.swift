@@ -113,7 +113,7 @@ extension XContentView: UICollectionViewDelegate {
 
 //MARK: - XTitleViewDelegate
 extension XContentView: XTitleViewDelegate {
-    func titleView(titleView: XTitleView, targetIndex: Int) {
+    func titleView(_ titleView: XTitleView, targetIndex: Int) {
         isForbidScroll = true
         collectionView.setContentOffset(CGPoint(x: CGFloat(targetIndex) * kScreenWidth, y: 0), animated: false)
     }

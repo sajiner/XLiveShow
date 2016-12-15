@@ -9,7 +9,7 @@
 import UIKit
 
 protocol XTitleViewDelegate: class {
-    func titleView(titleView: XTitleView, targetIndex: Int)
+    func titleView(_ titleView: XTitleView, targetIndex: Int)
 }
 
 class XTitleView: UIView {
@@ -92,6 +92,7 @@ extension XTitleView {
             label.textColor = i == 0 ? titleStyle.selColor : titleStyle.norColor
             label.font = UIFont.systemFont(ofSize: titleStyle.fontSize)
             label.tag = i
+            label.textAlignment = .center
             scrollView.addSubview(label)
             labels.append(label)
             
@@ -123,6 +124,29 @@ extension XTitleView: XContentViewDelegate {
             bottomLine.frame.size.width = sourceLabel.bounds.width + detalW * progress
             bottomLine.frame.origin.x = sourceLabel.frame.origin.x + detalX * progress
         }
+    }
+}
+
+// MARK: - 对外暴露的方法
+extension XTitleView {
+    func setTitleWithProgress(_ progress : CGFloat, sourceIndex : Int, targetIndex : Int) {
+        let sourceLabel = labels[sourceIndex]
+        let targetLabel = labels[targetIndex]
+        
+        let deltaRGB = UIColor.getRGBDelta(titleStyle.selColor, titleStyle.norColor)
+        let selRGB = titleStyle.selColor.getRGB()
+        let norRGB = titleStyle.norColor.getRGB()
+        targetLabel.textColor = UIColor(norRGB.0 + deltaRGB.0 * progress, norRGB.1 + deltaRGB.1 * progress, norRGB.2 + deltaRGB.2 * progress)
+        sourceLabel.textColor = UIColor(selRGB.0 - deltaRGB.0 * progress, selRGB.1 - deltaRGB.1 * progress, selRGB.2 - deltaRGB.2 * progress)
+        
+        // botomLine
+        if titleStyle.isShowBottomLine {
+            let deltaX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
+            let deltaW = targetLabel.frame.width - sourceLabel.frame.width
+            bottomLine.frame.origin.x = sourceLabel.frame.origin.x + deltaX * progress
+            bottomLine.frame.size.width = sourceLabel.frame.width + deltaW * progress
+        }
+        currentIndex = targetIndex
     }
 }
 
@@ -161,6 +185,6 @@ extension XTitleView {
         let targetLabel = tap.view as! UILabel
         addjuestTitleLabels(targetIndex: targetLabel.tag)
         
-        delegate?.titleView(titleView: self, targetIndex: targetLabel.tag)
+        delegate?.titleView(self, targetIndex: targetLabel.tag)
     }
 }

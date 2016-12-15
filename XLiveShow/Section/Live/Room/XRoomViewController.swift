@@ -8,6 +8,9 @@
 
 import UIKit
 
+private let kGiftlistViewHeight : CGFloat = kScreenHeight * 0.5
+private let kChatToolsViewHeight : CGFloat = 44
+
 class XRoomViewController: UIViewController {
 
     // MARK: 控件属性
@@ -17,14 +20,21 @@ class XRoomViewController: UIViewController {
     @IBOutlet weak var roomNumLabel: UILabel!
     @IBOutlet weak var onlineLabel: UILabel!
     
+    fileprivate lazy var giftListView : GiftListView = GiftListView.loadFromNib()
+    fileprivate lazy var chatToolsView : ChatToolsView = ChatToolsView.loadFromNib()
+    
     // MARK: 对外提供控件属性
     var liveModel : XLiveListModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setupUI()
+        
         // 设置内容
         setupAnchorInfo()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,6 +59,35 @@ extension XRoomViewController {
     }
 }
 
+// MARK:- 设置UI界面内容
+extension XRoomViewController {
+    fileprivate func setupUI() {
+        setupBlurView()
+        setupBottomView()
+    }
+    
+    fileprivate func setupBlurView() {
+        let blur = UIBlurEffect(style: .dark)
+        let blurView = UIVisualEffectView(effect: blur)
+        blurView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        blurView.frame = bgImageView.bounds
+        bgImageView.addSubview(blurView)
+    }
+    
+    fileprivate func setupBottomView() {
+        // 设置giftListView
+        giftListView.frame = CGRect(x: 0, y: view.bounds.height, width: view.bounds.width, height: kGiftlistViewHeight)
+        giftListView.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
+        giftListView.delegate = self
+        view.addSubview(giftListView)
+        
+        // 设置chatToolsView
+        chatToolsView.frame = CGRect(x: 0, y: view.bounds.height, width: view.bounds.width, height: kChatToolsViewHeight)
+        chatToolsView.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
+        chatToolsView.delegate = self
+        view.addSubview(chatToolsView)
+    }
+}
 
 // MARK:- 事件监听函数
 extension XRoomViewController {
@@ -72,17 +111,54 @@ extension XRoomViewController: XAnimatorManager {
     }
     
     @IBAction func giftItemClick() {
+        UIView.animate(withDuration: 0.25, animations: {
+            self.giftListView.frame.origin.y = kScreenHeight - kGiftlistViewHeight
+        })
     }
     
     @IBAction func shareItemClick() {
     }
     
     @IBAction func chatItemClick() {
+        chatToolsView.inputTextField.becomeFirstResponder()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+        UIView.animate(withDuration: 0.25, animations: {
+            self.giftListView.frame.origin.y = kScreenHeight
+        })
+        
+        chatToolsView.inputTextField.resignFirstResponder()
     }
 }
 
+// MARK:- 监听键盘的弹出
+extension XRoomViewController {
+    @objc fileprivate func keyboardWillChangeFrame(_ note : Notification) {
+        let duration = note.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! Double
+        let endFrame = (note.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let inputViewY = endFrame.origin.y - kChatToolsViewHeight
+        
+        UIView.animate(withDuration: duration, animations: {
+            UIView.setAnimationCurve(UIViewAnimationCurve(rawValue: 7)!)
+            let endY = inputViewY == (kScreenHeight - kChatToolsViewHeight) ? kScreenHeight : inputViewY
+            self.chatToolsView.frame.origin.y = endY
+        })
+    }
+}
 
+// MARK:- 监听用户输入的内容
+extension XRoomViewController : ChatToolsViewDelegate, GiftListViewDelegate {
+    func chatToolsView(toolView: ChatToolsView, message: String) {
+        print(message)
+    }
+    
+    func giftListView(giftView: GiftListView, giftModel: GiftModel) {
+        print(giftModel.subject)
+    }
+    
+}
 
 
 

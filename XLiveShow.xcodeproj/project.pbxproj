@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE18F5E31E0237E6008297E7 /* XPageCollectionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18F5E11E0237E6008297E7 /* XPageCollectionFlowLayout.swift */; };
+		AE18F5E41E0237E6008297E7 /* XPageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18F5E21E0237E6008297E7 /* XPageCollectionView.swift */; };
+		AE18F5EA1E023B3E008297E7 /* GiftListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18F5E61E023B3E008297E7 /* GiftListView.swift */; };
+		AE18F5EB1E023B3E008297E7 /* GiftListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE18F5E71E023B3E008297E7 /* GiftListView.xib */; };
+		AE18F5EC1E023B3E008297E7 /* GiftViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18F5E81E023B3E008297E7 /* GiftViewCell.swift */; };
+		AE18F5ED1E023B3E008297E7 /* GiftViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE18F5E91E023B3E008297E7 /* GiftViewCell.xib */; };
+		AE18F5EF1E024479008297E7 /* GiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18F5EE1E024479008297E7 /* GiftModel.swift */; };
+		AE18F5F11E0244EC008297E7 /* GiftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18F5F01E0244EC008297E7 /* GiftViewModel.swift */; };
+		AE18F5F31E02453C008297E7 /* GiftPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18F5F21E02453C008297E7 /* GiftPackage.swift */; };
+		AE18F5F51E02475B008297E7 /* XNibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18F5F41E02475B008297E7 /* XNibLoadable.swift */; };
+		AE18F5FC1E025984008297E7 /* ChatToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18F5F71E025984008297E7 /* ChatToolsView.swift */; };
+		AE18F5FD1E025984008297E7 /* ChatToolsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE18F5F81E025984008297E7 /* ChatToolsView.xib */; };
+		AE18F5FE1E025984008297E7 /* EmoticonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18F5F91E025984008297E7 /* EmoticonView.swift */; };
+		AE18F5FF1E025984008297E7 /* EmoticonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18F5FA1E025984008297E7 /* EmoticonViewCell.swift */; };
+		AE18F6001E025984008297E7 /* EmoticonViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE18F5FB1E025984008297E7 /* EmoticonViewCell.xib */; };
+		AE18F6031E025B36008297E7 /* QHNormalEmotionSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE18F6011E025B36008297E7 /* QHNormalEmotionSort.plist */; };
+		AE18F6041E025B36008297E7 /* QHSohuGifSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE18F6021E025B36008297E7 /* QHSohuGifSort.plist */; };
+		AE18F6061E025B97008297E7 /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18F6051E025B97008297E7 /* Emoticon.swift */; };
+		AE18F6081E025BAF008297E7 /* EmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18F6071E025BAF008297E7 /* EmoticonPackage.swift */; };
+		AE18F60A1E025C0A008297E7 /* EmoticonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18F6091E025C0A008297E7 /* EmoticonViewModel.swift */; };
 		AE2130EA1DFEF16A0050C099 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2130E91DFEF16A0050C099 /* AppDelegate.swift */; };
 		AE2130EF1DFEF16A0050C099 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE2130ED1DFEF16A0050C099 /* Main.storyboard */; };
 		AE2130F11DFEF16A0050C099 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE2130F01DFEF16A0050C099 /* Assets.xcassets */; };
@@ -48,6 +68,26 @@
 /* Begin PBXFileReference section */
 		5C3A71258C0B4419B65165A0 /* Pods-XLiveShow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XLiveShow.release.xcconfig"; path = "Pods/Target Support Files/Pods-XLiveShow/Pods-XLiveShow.release.xcconfig"; sourceTree = "<group>"; };
 		8BB8697A4C39B4D13BD316BF /* Pods-XLiveShow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XLiveShow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XLiveShow/Pods-XLiveShow.debug.xcconfig"; sourceTree = "<group>"; };
+		AE18F5E11E0237E6008297E7 /* XPageCollectionFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPageCollectionFlowLayout.swift; sourceTree = "<group>"; };
+		AE18F5E21E0237E6008297E7 /* XPageCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPageCollectionView.swift; sourceTree = "<group>"; };
+		AE18F5E61E023B3E008297E7 /* GiftListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftListView.swift; sourceTree = "<group>"; };
+		AE18F5E71E023B3E008297E7 /* GiftListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftListView.xib; sourceTree = "<group>"; };
+		AE18F5E81E023B3E008297E7 /* GiftViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftViewCell.swift; sourceTree = "<group>"; };
+		AE18F5E91E023B3E008297E7 /* GiftViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftViewCell.xib; sourceTree = "<group>"; };
+		AE18F5EE1E024479008297E7 /* GiftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftModel.swift; sourceTree = "<group>"; };
+		AE18F5F01E0244EC008297E7 /* GiftViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftViewModel.swift; sourceTree = "<group>"; };
+		AE18F5F21E02453C008297E7 /* GiftPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftPackage.swift; sourceTree = "<group>"; };
+		AE18F5F41E02475B008297E7 /* XNibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XNibLoadable.swift; sourceTree = "<group>"; };
+		AE18F5F71E025984008297E7 /* ChatToolsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatToolsView.swift; sourceTree = "<group>"; };
+		AE18F5F81E025984008297E7 /* ChatToolsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatToolsView.xib; sourceTree = "<group>"; };
+		AE18F5F91E025984008297E7 /* EmoticonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonView.swift; sourceTree = "<group>"; };
+		AE18F5FA1E025984008297E7 /* EmoticonViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonViewCell.swift; sourceTree = "<group>"; };
+		AE18F5FB1E025984008297E7 /* EmoticonViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmoticonViewCell.xib; sourceTree = "<group>"; };
+		AE18F6011E025B36008297E7 /* QHNormalEmotionSort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = QHNormalEmotionSort.plist; sourceTree = "<group>"; };
+		AE18F6021E025B36008297E7 /* QHSohuGifSort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = QHSohuGifSort.plist; sourceTree = "<group>"; };
+		AE18F6051E025B97008297E7 /* Emoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emoticon.swift; sourceTree = "<group>"; };
+		AE18F6071E025BAF008297E7 /* EmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonPackage.swift; sourceTree = "<group>"; };
+		AE18F6091E025C0A008297E7 /* EmoticonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonViewModel.swift; sourceTree = "<group>"; };
 		AE2130E61DFEF16A0050C099 /* XLiveShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XLiveShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2130E91DFEF16A0050C099 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE2130EE1DFEF16A0050C099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -106,6 +146,35 @@
 				BB32206EF82CD25E17A72558 /* Pods_XLiveShow.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE18F5E51E023B3E008297E7 /* GiftView */ = {
+			isa = PBXGroup;
+			children = (
+				AE18F5E61E023B3E008297E7 /* GiftListView.swift */,
+				AE18F5E71E023B3E008297E7 /* GiftListView.xib */,
+				AE18F5E81E023B3E008297E7 /* GiftViewCell.swift */,
+				AE18F5E91E023B3E008297E7 /* GiftViewCell.xib */,
+				AE18F5EE1E024479008297E7 /* GiftModel.swift */,
+				AE18F5F01E0244EC008297E7 /* GiftViewModel.swift */,
+				AE18F5F21E02453C008297E7 /* GiftPackage.swift */,
+			);
+			path = GiftView;
+			sourceTree = "<group>";
+		};
+		AE18F5F61E025984008297E7 /* ChatView */ = {
+			isa = PBXGroup;
+			children = (
+				AE18F5F71E025984008297E7 /* ChatToolsView.swift */,
+				AE18F5F81E025984008297E7 /* ChatToolsView.xib */,
+				AE18F5F91E025984008297E7 /* EmoticonView.swift */,
+				AE18F5FA1E025984008297E7 /* EmoticonViewCell.swift */,
+				AE18F5FB1E025984008297E7 /* EmoticonViewCell.xib */,
+				AE18F6051E025B97008297E7 /* Emoticon.swift */,
+				AE18F6071E025BAF008297E7 /* EmoticonPackage.swift */,
+				AE18F6091E025C0A008297E7 /* EmoticonViewModel.swift */,
+			);
+			path = ChatView;
 			sourceTree = "<group>";
 		};
 		AE2130DD1DFEF16A0050C099 = {
@@ -229,6 +298,8 @@
 		AEBC7CBF1DFFBE9F00C6E137 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				AE18F6011E025B36008297E7 /* QHNormalEmotionSort.plist */,
+				AE18F6021E025B36008297E7 /* QHSohuGifSort.plist */,
 				AEBC7CC01DFFBEAB00C6E137 /* types.plist */,
 			);
 			path = Source;
@@ -237,6 +308,8 @@
 		AEBC7CD01DFFC4C600C6E137 /* XPageView */ = {
 			isa = PBXGroup;
 			children = (
+				AE18F5E11E0237E6008297E7 /* XPageCollectionFlowLayout.swift */,
+				AE18F5E21E0237E6008297E7 /* XPageCollectionView.swift */,
 				AEBC7CD21DFFC4C600C6E137 /* XPageView.swift */,
 				AEBC7CD11DFFC4C600C6E137 /* XContentView.swift */,
 				AEBC7CE41DFFCF8B00C6E137 /* XPageFlowLayout.swift */,
@@ -252,6 +325,7 @@
 				AEBC7CF11E00DCC100C6E137 /* XNetworkTools.swift */,
 				AEBC7CF91E00E81300C6E137 /* KingFisherExtension.swift */,
 				AEBC7D021E0126A700C6E137 /* XAnimatorManager.swift */,
+				AE18F5F41E02475B008297E7 /* XNibLoadable.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -275,6 +349,8 @@
 		AEBC7CFB1E00EFCC00C6E137 /* Room */ = {
 			isa = PBXGroup;
 			children = (
+				AE18F5F61E025984008297E7 /* ChatView */,
+				AE18F5E51E023B3E008297E7 /* GiftView */,
 				AEBC7CFC1E00EFDB00C6E137 /* XRoomViewController.swift */,
 				AEBC7CFD1E00EFDB00C6E137 /* XRoomViewController.xib */,
 			);
@@ -356,11 +432,17 @@
 			files = (
 				AE2131151DFF95290050C099 /* XRankViewController.storyboard in Resources */,
 				AE2131111DFF951B0050C099 /* XLiveViewController.storyboard in Resources */,
+				AE18F6031E025B36008297E7 /* QHNormalEmotionSort.plist in Resources */,
+				AE18F6041E025B36008297E7 /* QHSohuGifSort.plist in Resources */,
+				AE18F5ED1E023B3E008297E7 /* GiftViewCell.xib in Resources */,
 				AEBC7CF01E003EA200C6E137 /* XLiveListCell.xib in Resources */,
 				AEBC7CC11DFFBEAB00C6E137 /* types.plist in Resources */,
 				AE2131131DFF95220050C099 /* XMineViewController.storyboard in Resources */,
 				AE2131051DFF92210050C099 /* LaunchScreen.storyboard in Resources */,
+				AE18F5FD1E025984008297E7 /* ChatToolsView.xib in Resources */,
 				AEBC7CFF1E00EFDB00C6E137 /* XRoomViewController.xib in Resources */,
+				AE18F5EB1E023B3E008297E7 /* GiftListView.xib in Resources */,
+				AE18F6001E025984008297E7 /* EmoticonViewCell.xib in Resources */,
 				AE2131091DFF94DF0050C099 /* XFindViewController.storyboard in Resources */,
 				AE2130F11DFEF16A0050C099 /* Assets.xcassets in Resources */,
 				AE2130EF1DFEF16A0050C099 /* Main.storyboard in Resources */,
@@ -424,7 +506,10 @@
 			files = (
 				AEBC7CFE1E00EFDB00C6E137 /* XRoomViewController.swift in Sources */,
 				AEBC7CD71DFFC4C600C6E137 /* XTitleStyle.swift in Sources */,
+				AE18F6061E025B97008297E7 /* Emoticon.swift in Sources */,
+				AE18F5F31E02453C008297E7 /* GiftPackage.swift in Sources */,
 				AE2131171DFF9E200050C099 /* XNavigationController.swift in Sources */,
+				AE18F5EF1E024479008297E7 /* GiftModel.swift in Sources */,
 				AE2131021DFF91500050C099 /* XTabBarController.swift in Sources */,
 				AE21311A1DFFA58F0050C099 /* XMyAttensionViewController.swift in Sources */,
 				AE21310F1DFF94FE0050C099 /* XRankViewController.swift in Sources */,
@@ -433,19 +518,30 @@
 				AE2131071DFF94D80050C099 /* XFindViewController.swift in Sources */,
 				AEBC7CE31DFFCE3000C6E137 /* UIColor+Extension.swift in Sources */,
 				AEBC7CE51DFFCF8B00C6E137 /* XPageFlowLayout.swift in Sources */,
+				AE18F5EC1E023B3E008297E7 /* GiftViewCell.swift in Sources */,
+				AE18F5FF1E025984008297E7 /* EmoticonViewCell.swift in Sources */,
 				AEBC7CEC1E00329F00C6E137 /* XWaterfallFlowLayout.swift in Sources */,
 				AEBC7CFA1E00E81300C6E137 /* KingFisherExtension.swift in Sources */,
 				AEBC7CE71E0031A500C6E137 /* XLiveListViewController.swift in Sources */,
+				AE18F5EA1E023B3E008297E7 /* GiftListView.swift in Sources */,
+				AE18F5FC1E025984008297E7 /* ChatToolsView.swift in Sources */,
+				AE18F5F11E0244EC008297E7 /* GiftViewModel.swift in Sources */,
 				AEBC7CCF1DFFC2CC00C6E137 /* XTitleModel.swift in Sources */,
+				AE18F5E31E0237E6008297E7 /* XPageCollectionFlowLayout.swift in Sources */,
 				AEBC7D031E0126A700C6E137 /* XAnimatorManager.swift in Sources */,
 				AEBC7CD61DFFC4C600C6E137 /* XPageView.swift in Sources */,
+				AE18F6081E025BAF008297E7 /* EmoticonPackage.swift in Sources */,
+				AE18F5F51E02475B008297E7 /* XNibLoadable.swift in Sources */,
 				AEBC7CD81DFFC4C600C6E137 /* XTitleView.swift in Sources */,
 				AEBC7CD51DFFC4C600C6E137 /* XContentView.swift in Sources */,
 				AE21311C1DFFB74F0050C099 /* XConst.swift in Sources */,
 				AEBC7CF21E00DCC100C6E137 /* XNetworkTools.swift in Sources */,
 				AE21310D1DFF94F60050C099 /* XMineViewController.swift in Sources */,
 				AEBC7CF61E00E34B00C6E137 /* XLiveListModel.swift in Sources */,
+				AE18F5E41E0237E6008297E7 /* XPageCollectionView.swift in Sources */,
 				AE21310B1DFF94ED0050C099 /* XLiveViewController.swift in Sources */,
+				AE18F5FE1E025984008297E7 /* EmoticonView.swift in Sources */,
+				AE18F60A1E025C0A008297E7 /* EmoticonViewModel.swift in Sources */,
 				AEBC7CF81E00E3A800C6E137 /* XLiveViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

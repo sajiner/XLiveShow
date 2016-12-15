@@ -22,7 +22,8 @@ class XPageView: UIView {
     }()
     
     fileprivate lazy var titleView: XTitleView = {
-        let titleFrame = CGRect(x: 0, y: 0, width: kScreenWidth, height: self.titleStyle.titleHeight + self.titleStyle.bottomLineHeight)
+        let titleHeight = self.titleStyle.isShowBottomLine ? self.titleStyle.titleHeight + self.titleStyle.bottomLineHeight : self.titleStyle.titleHeight
+        let titleFrame = CGRect(x: 0, y: 0, width: kScreenWidth, height: titleHeight)
         let titleView = XTitleView(frame: titleFrame, titles: self.titles, titleStyle: self.titleStyle)
         titleView.backgroundColor = UIColor.white
         return titleView
