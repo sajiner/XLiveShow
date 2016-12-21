@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE06E76F1E08FD510018C162 /* XChatContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE06E76E1E08FD510018C162 /* XChatContentView.swift */; };
+		AE06E7711E08FD5C0018C162 /* XChatContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE06E7701E08FD5C0018C162 /* XChatContentView.xib */; };
+		AE06E7741E08FDD50018C162 /* XChatContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE06E7721E08FDD50018C162 /* XChatContentCell.swift */; };
+		AE06E7751E08FDD50018C162 /* XChatContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE06E7731E08FDD50018C162 /* XChatContentCell.xib */; };
+		AE06E7781E0909C30018C162 /* XGiftChannelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE06E7771E0909C30018C162 /* XGiftChannelView.swift */; };
+		AE06E77A1E0909D30018C162 /* XGiftContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE06E7791E0909D30018C162 /* XGiftContainerView.swift */; };
+		AE06E77C1E0909DC0018C162 /* XGiftChannelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE06E77B1E0909DC0018C162 /* XGiftChannelView.xib */; };
+		AE06E77E1E090A310018C162 /* XDigitLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE06E77D1E090A310018C162 /* XDigitLabel.swift */; };
+		AE06E7801E090CDF0018C162 /* XGiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE06E77F1E090CDF0018C162 /* XGiftModel.swift */; };
+		AE06E7821E09104C0018C162 /* XChannelViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE06E7811E09104C0018C162 /* XChannelViewStyle.swift */; };
 		AE18F5E31E0237E6008297E7 /* XPageCollectionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18F5E11E0237E6008297E7 /* XPageCollectionFlowLayout.swift */; };
 		AE18F5E41E0237E6008297E7 /* XPageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18F5E21E0237E6008297E7 /* XPageCollectionView.swift */; };
 		AE18F5EA1E023B3E008297E7 /* GiftListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE18F5E61E023B3E008297E7 /* GiftListView.swift */; };
@@ -68,6 +78,16 @@
 /* Begin PBXFileReference section */
 		5C3A71258C0B4419B65165A0 /* Pods-XLiveShow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XLiveShow.release.xcconfig"; path = "Pods/Target Support Files/Pods-XLiveShow/Pods-XLiveShow.release.xcconfig"; sourceTree = "<group>"; };
 		8BB8697A4C39B4D13BD316BF /* Pods-XLiveShow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XLiveShow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XLiveShow/Pods-XLiveShow.debug.xcconfig"; sourceTree = "<group>"; };
+		AE06E76E1E08FD510018C162 /* XChatContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XChatContentView.swift; sourceTree = "<group>"; };
+		AE06E7701E08FD5C0018C162 /* XChatContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XChatContentView.xib; sourceTree = "<group>"; };
+		AE06E7721E08FDD50018C162 /* XChatContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XChatContentCell.swift; sourceTree = "<group>"; };
+		AE06E7731E08FDD50018C162 /* XChatContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XChatContentCell.xib; sourceTree = "<group>"; };
+		AE06E7771E0909C30018C162 /* XGiftChannelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XGiftChannelView.swift; sourceTree = "<group>"; };
+		AE06E7791E0909D30018C162 /* XGiftContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XGiftContainerView.swift; sourceTree = "<group>"; };
+		AE06E77B1E0909DC0018C162 /* XGiftChannelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XGiftChannelView.xib; sourceTree = "<group>"; };
+		AE06E77D1E090A310018C162 /* XDigitLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XDigitLabel.swift; sourceTree = "<group>"; };
+		AE06E77F1E090CDF0018C162 /* XGiftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XGiftModel.swift; sourceTree = "<group>"; };
+		AE06E7811E09104C0018C162 /* XChannelViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XChannelViewStyle.swift; sourceTree = "<group>"; };
 		AE18F5E11E0237E6008297E7 /* XPageCollectionFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPageCollectionFlowLayout.swift; sourceTree = "<group>"; };
 		AE18F5E21E0237E6008297E7 /* XPageCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPageCollectionView.swift; sourceTree = "<group>"; };
 		AE18F5E61E023B3E008297E7 /* GiftListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftListView.swift; sourceTree = "<group>"; };
@@ -146,6 +166,30 @@
 				BB32206EF82CD25E17A72558 /* Pods_XLiveShow.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE06E76D1E08FD230018C162 /* ChatContentView */ = {
+			isa = PBXGroup;
+			children = (
+				AE06E76E1E08FD510018C162 /* XChatContentView.swift */,
+				AE06E7701E08FD5C0018C162 /* XChatContentView.xib */,
+				AE06E7721E08FDD50018C162 /* XChatContentCell.swift */,
+				AE06E7731E08FDD50018C162 /* XChatContentCell.xib */,
+			);
+			path = ChatContentView;
+			sourceTree = "<group>";
+		};
+		AE06E7761E0907F70018C162 /* GiftAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				AE06E7771E0909C30018C162 /* XGiftChannelView.swift */,
+				AE06E77B1E0909DC0018C162 /* XGiftChannelView.xib */,
+				AE06E7791E0909D30018C162 /* XGiftContainerView.swift */,
+				AE06E77D1E090A310018C162 /* XDigitLabel.swift */,
+				AE06E77F1E090CDF0018C162 /* XGiftModel.swift */,
+				AE06E7811E09104C0018C162 /* XChannelViewStyle.swift */,
+			);
+			path = GiftAnimation;
 			sourceTree = "<group>";
 		};
 		AE18F5E51E023B3E008297E7 /* GiftView */ = {
@@ -349,6 +393,8 @@
 		AEBC7CFB1E00EFCC00C6E137 /* Room */ = {
 			isa = PBXGroup;
 			children = (
+				AE06E7761E0907F70018C162 /* GiftAnimation */,
+				AE06E76D1E08FD230018C162 /* ChatContentView */,
 				AE18F5F61E025984008297E7 /* ChatView */,
 				AE18F5E51E023B3E008297E7 /* GiftView */,
 				AEBC7CFC1E00EFDB00C6E137 /* XRoomViewController.swift */,
@@ -403,6 +449,7 @@
 					AE2130E51DFEF16A0050C099 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = G46CPH7762;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -432,7 +479,10 @@
 			files = (
 				AE2131151DFF95290050C099 /* XRankViewController.storyboard in Resources */,
 				AE2131111DFF951B0050C099 /* XLiveViewController.storyboard in Resources */,
+				AE06E77C1E0909DC0018C162 /* XGiftChannelView.xib in Resources */,
+				AE06E7711E08FD5C0018C162 /* XChatContentView.xib in Resources */,
 				AE18F6031E025B36008297E7 /* QHNormalEmotionSort.plist in Resources */,
+				AE06E7751E08FDD50018C162 /* XChatContentCell.xib in Resources */,
 				AE18F6041E025B36008297E7 /* QHSohuGifSort.plist in Resources */,
 				AE18F5ED1E023B3E008297E7 /* GiftViewCell.xib in Resources */,
 				AEBC7CF01E003EA200C6E137 /* XLiveListCell.xib in Resources */,
@@ -505,12 +555,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEBC7CFE1E00EFDB00C6E137 /* XRoomViewController.swift in Sources */,
+				AE06E77E1E090A310018C162 /* XDigitLabel.swift in Sources */,
 				AEBC7CD71DFFC4C600C6E137 /* XTitleStyle.swift in Sources */,
 				AE18F6061E025B97008297E7 /* Emoticon.swift in Sources */,
 				AE18F5F31E02453C008297E7 /* GiftPackage.swift in Sources */,
 				AE2131171DFF9E200050C099 /* XNavigationController.swift in Sources */,
+				AE06E7801E090CDF0018C162 /* XGiftModel.swift in Sources */,
 				AE18F5EF1E024479008297E7 /* GiftModel.swift in Sources */,
 				AE2131021DFF91500050C099 /* XTabBarController.swift in Sources */,
+				AE06E76F1E08FD510018C162 /* XChatContentView.swift in Sources */,
 				AE21311A1DFFA58F0050C099 /* XMyAttensionViewController.swift in Sources */,
 				AE21310F1DFF94FE0050C099 /* XRankViewController.swift in Sources */,
 				AE2130EA1DFEF16A0050C099 /* AppDelegate.swift in Sources */,
@@ -518,6 +571,7 @@
 				AE2131071DFF94D80050C099 /* XFindViewController.swift in Sources */,
 				AEBC7CE31DFFCE3000C6E137 /* UIColor+Extension.swift in Sources */,
 				AEBC7CE51DFFCF8B00C6E137 /* XPageFlowLayout.swift in Sources */,
+				AE06E7821E09104C0018C162 /* XChannelViewStyle.swift in Sources */,
 				AE18F5EC1E023B3E008297E7 /* GiftViewCell.swift in Sources */,
 				AE18F5FF1E025984008297E7 /* EmoticonViewCell.swift in Sources */,
 				AEBC7CEC1E00329F00C6E137 /* XWaterfallFlowLayout.swift in Sources */,
@@ -527,6 +581,7 @@
 				AE18F5FC1E025984008297E7 /* ChatToolsView.swift in Sources */,
 				AE18F5F11E0244EC008297E7 /* GiftViewModel.swift in Sources */,
 				AEBC7CCF1DFFC2CC00C6E137 /* XTitleModel.swift in Sources */,
+				AE06E77A1E0909D30018C162 /* XGiftContainerView.swift in Sources */,
 				AE18F5E31E0237E6008297E7 /* XPageCollectionFlowLayout.swift in Sources */,
 				AEBC7D031E0126A700C6E137 /* XAnimatorManager.swift in Sources */,
 				AEBC7CD61DFFC4C600C6E137 /* XPageView.swift in Sources */,
@@ -539,8 +594,10 @@
 				AE21310D1DFF94F60050C099 /* XMineViewController.swift in Sources */,
 				AEBC7CF61E00E34B00C6E137 /* XLiveListModel.swift in Sources */,
 				AE18F5E41E0237E6008297E7 /* XPageCollectionView.swift in Sources */,
+				AE06E7741E08FDD50018C162 /* XChatContentCell.swift in Sources */,
 				AE21310B1DFF94ED0050C099 /* XLiveViewController.swift in Sources */,
 				AE18F5FE1E025984008297E7 /* EmoticonView.swift in Sources */,
+				AE06E7781E0909C30018C162 /* XGiftChannelView.swift in Sources */,
 				AE18F60A1E025C0A008297E7 /* EmoticonViewModel.swift in Sources */,
 				AEBC7CF81E00E3A800C6E137 /* XLiveViewModel.swift in Sources */,
 			);

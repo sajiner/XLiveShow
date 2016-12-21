@@ -33,14 +33,14 @@ class XLiveListViewController: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(collectionView)
-        loadData(index: 0)
+        loadData(0)
     }
 
 }
 
 extension XLiveListViewController {
-    fileprivate func loadData(index : Int) {
-        liveViewModel.loadLiveData(type: titleModel, index: index, finishedCallback: {
+    fileprivate func loadData(_ index : Int) {
+        liveViewModel.loadLiveData(titleModel, index: index, finishedCallback: {
             self.collectionView.reloadData()
         })
     }
@@ -58,7 +58,7 @@ extension XLiveListViewController: UICollectionViewDataSource {
         cell.liveModel = liveViewModel.liveModels[indexPath.item]
         
         if indexPath.item == liveViewModel.liveModels.count - 1 {
-            loadData(index: liveViewModel.liveModels.count)
+            loadData(liveViewModel.liveModels.count)
         }
         
         return cell

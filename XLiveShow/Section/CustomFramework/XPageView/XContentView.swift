@@ -9,8 +9,8 @@
 import UIKit
 
 protocol XContentViewDelegate: class {
-    func contentView(contentView: XContentView, targetIndex: Int)
-    func contentView(contentView: XContentView, targetIndex: Int, progress: CGFloat)
+    func contentView(_ contentView: XContentView, targetIndex: Int)
+    func contentView(_ contentView: XContentView, targetIndex: Int, progress: CGFloat)
 }
 
 private let kPageCellId = "kPageCellId"
@@ -107,7 +107,7 @@ extension XContentView: UICollectionViewDelegate {
                 targetIndex = childVcs.count - 1
             }
         }
-        delegate?.contentView(contentView: self, targetIndex: targetIndex, progress: detalX)
+        delegate?.contentView(self, targetIndex: targetIndex, progress: detalX)
     }
 }
 
@@ -126,6 +126,6 @@ extension XContentView {
             return
         }
         let page = collectionView.contentOffset.x / CGFloat(kScreenWidth)
-        delegate?.contentView(contentView: self, targetIndex: Int(page))
+        delegate?.contentView(self, targetIndex: Int(page))
     }
 }

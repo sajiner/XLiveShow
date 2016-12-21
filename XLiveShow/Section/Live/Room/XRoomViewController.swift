@@ -10,6 +10,7 @@ import UIKit
 
 private let kGiftlistViewHeight : CGFloat = kScreenHeight * 0.5
 private let kChatToolsViewHeight : CGFloat = 44
+private let kChatViewHeight: CGFloat = 100
 
 class XRoomViewController: UIViewController {
 
@@ -22,6 +23,12 @@ class XRoomViewController: UIViewController {
     
     fileprivate lazy var giftListView : GiftListView = GiftListView.loadFromNib()
     fileprivate lazy var chatToolsView : ChatToolsView = ChatToolsView.loadFromNib()
+    fileprivate lazy var chatContentView : XChatContentView = XChatContentView.loadFromNib()
+    fileprivate lazy var giftContainerView: XGiftContainerView = {
+        let channelStyle = XChannelViewStyle()
+        let giftContainerView = XGiftContainerView(frame: CGRect(x: 0, y: 100, width: 250, height: 90), style: channelStyle)
+        return giftContainerView
+    }()
     
     // MARK: 对外提供控件属性
     var liveModel : XLiveListModel?
@@ -64,6 +71,12 @@ extension XRoomViewController {
     fileprivate func setupUI() {
         setupBlurView()
         setupBottomView()
+        setupGiftContainerView()
+    }
+    
+    fileprivate func setupGiftContainerView() {
+        giftContainerView.backgroundColor = UIColor.clear
+        bgImageView.addSubview(giftContainerView)
     }
     
     fileprivate func setupBlurView() {
@@ -75,15 +88,20 @@ extension XRoomViewController {
     }
     
     fileprivate func setupBottomView() {
+       // 设置chatContentVIew
+        chatContentView.frame = CGRect(x: 0, y: kScreenHeight - kTabBarHeight - kChatViewHeight, width: kScreenWidth, height: kChatViewHeight)
+//        chatContentView.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
+        view.addSubview(chatContentView)
+        
         // 设置giftListView
-        giftListView.frame = CGRect(x: 0, y: view.bounds.height, width: view.bounds.width, height: kGiftlistViewHeight)
-        giftListView.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
+        giftListView.frame = CGRect(x: 0, y: kScreenHeight, width: kScreenWidth, height: kGiftlistViewHeight)
+//        giftListView.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
         giftListView.delegate = self
         view.addSubview(giftListView)
         
         // 设置chatToolsView
-        chatToolsView.frame = CGRect(x: 0, y: view.bounds.height, width: view.bounds.width, height: kChatToolsViewHeight)
-        chatToolsView.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
+        chatToolsView.frame = CGRect(x: 0, y: kScreenHeight, width: kScreenWidth, height: kChatToolsViewHeight)
+//        chatToolsView.autoresizingMask = [.flexibleTopMargin, .flexibleWidth]
         chatToolsView.delegate = self
         view.addSubview(chatToolsView)
     }
@@ -101,7 +119,7 @@ extension XRoomViewController {
 
 // MARK:- 底部菜单的点击
 extension XRoomViewController: XAnimatorManager {
-    @IBAction func starItemClick(starItem : UIButton) {
+    @IBAction func starItemClick(_ starItem : UIButton) {
         starItem.isSelected = !starItem.isSelected
         let point = CGPoint(x: starItem.center.x, y: view.bounds.height - starItem.bounds.height * 0.5)
         starItem.isSelected ? startEmittering(point, cellCounts: 10) : stopEmittering()
@@ -144,18 +162,30 @@ extension XRoomViewController {
             UIView.setAnimationCurve(UIViewAnimationCurve(rawValue: 7)!)
             let endY = inputViewY == (kScreenHeight - kChatToolsViewHeight) ? kScreenHeight : inputViewY
             self.chatToolsView.frame.origin.y = endY
+            
+            let chatContentY = inputViewY == (kScreenHeight - kChatToolsViewHeight) ? kScreenHeight - kTabBarHeight - kChatViewHeight : inputViewY - kChatViewHeight
+            self.chatContentView.frame.origin.y = chatContentY
         })
     }
 }
 
+
+
 // MARK:- 监听用户输入的内容
 extension XRoomViewController : ChatToolsViewDelegate, GiftListViewDelegate {
-    func chatToolsView(toolView: ChatToolsView, message: String) {
-        print(message)
+    func chatToolsView(_ toolView: ChatToolsView, message: String) {
+        let msg = NSAttributedString(string: message)
+        
+        
+        chatContentView.messages.append(msg)
+        chatContentView.reloadData()
+        
     }
     
-    func giftListView(giftView: GiftListView, giftModel: GiftModel) {
-        print(giftModel.subject)
+    func giftListView(_ giftView: GiftListView, giftModel: GiftModel) {
+
+        let model = XGiftModel(senderName: "sajiner", senderURL: "", giftName: giftModel.subject, giftURL: giftModel.img2)
+        giftContainerView.showGiftModel(model)
     }
     
 }

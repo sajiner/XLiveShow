@@ -14,7 +14,7 @@ class GiftViewModel {
 }
 
 extension GiftViewModel {
-    func loadGiftData(finishedCallback : @escaping () -> ()) {
+    func loadGiftData(_ finishedCallback : @escaping () -> ()) {
         // http://qf.56.com/pay/v4/giftList.ios?type=0&page=1&rows=150
         
         if giftlistData.count != 0 { finishedCallback() }

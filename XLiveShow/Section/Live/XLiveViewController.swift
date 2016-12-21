@@ -50,7 +50,7 @@ extension XLiveViewController {
     }
     
     /// 加载所有的子控制器
-    private func loadChildVcs() -> [UIViewController] {
+    fileprivate func loadChildVcs() -> [UIViewController] {
         var childVcs = [XLiveListViewController]()
         for titleModel in titleModels {
             let childVc = XLiveListViewController()
@@ -78,7 +78,7 @@ extension XLiveViewController {
         searchFeild?.textColor = UIColor.white
     }
         
-   @objc private func gotoMyAttension() {
+   @objc fileprivate func gotoMyAttension() {
         let attensionVc = XMyAttensionViewController()
         attensionVc.navigationItem.title = "我的关注"
         navigationController?.pushViewController(attensionVc, animated: true)

@@ -105,11 +105,11 @@ extension XTitleView {
 
 //MARK: - XContentViewDelegate
 extension XTitleView: XContentViewDelegate {
-    func contentView(contentView: XContentView, targetIndex: Int) {
-       addjuestTitleLabels(targetIndex: targetIndex)
+    func contentView(_ contentView: XContentView, targetIndex: Int) {
+       addjuestTitleLabels(targetIndex)
     }
     
-    func contentView(contentView: XContentView, targetIndex: Int, progress: CGFloat) {
+    func contentView(_ contentView: XContentView, targetIndex: Int, progress: CGFloat) {
         let sourceLabel = labels[currentIndex]
         let targetLabel = labels[targetIndex]
         
@@ -152,7 +152,7 @@ extension XTitleView {
 
 //MARK: - 一些私有方法
 extension XTitleView {
-    fileprivate func addjuestTitleLabels(targetIndex: Int) {
+    fileprivate func addjuestTitleLabels(_ targetIndex: Int) {
         let sourceLabel = labels[currentIndex]
         let targetLabel = labels[targetIndex]
         
@@ -183,7 +183,7 @@ extension XTitleView {
     
     @objc fileprivate func titleLabelClick(_ tap: UITapGestureRecognizer) {
         let targetLabel = tap.view as! UILabel
-        addjuestTitleLabels(targetIndex: targetLabel.tag)
+        addjuestTitleLabels(targetLabel.tag)
         
         delegate?.titleView(self, targetIndex: targetLabel.tag)
     }

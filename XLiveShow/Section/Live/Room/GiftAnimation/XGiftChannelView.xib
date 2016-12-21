@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="xgi-E8-lkN" customClass="XGiftChannelView" customModule="XLiveShow" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCa-M3-xqC" userLabel="背景">
+                    <rect key="frame" x="0.0" y="0.0" width="207" height="44"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zit-u8-P2O" customClass="XDigitLabel" customModule="XLiveShow" customModuleProvider="target">
+                    <rect key="frame" x="212" y="0.0" width="38" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="6b3-4j-Xyq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Qb-Hn-wqr" userLabel="头像">
+                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="5Qb-Hn-wqr" secondAttribute="height" multiplier="1:1" id="P28-YT-ubE"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="coderwhy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qxt-8j-DhU">
+                    <rect key="frame" x="54" y="5" width="52" height="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="送出礼物【飞机】" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wb-x2-ewF">
+                    <rect key="frame" x="54" y="27" width="99" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N2e-y5-l0M" userLabel="礼物">
+                    <rect key="frame" x="153" y="-5" width="54" height="54"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="N2e-y5-l0M" secondAttribute="height" multiplier="1:1" id="nRZ-7x-LrQ"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="zit-u8-P2O" firstAttribute="leading" secondItem="N2e-y5-l0M" secondAttribute="trailing" constant="5" id="0Jd-gd-xJG"/>
+                <constraint firstItem="zit-u8-P2O" firstAttribute="leading" secondItem="MCa-M3-xqC" secondAttribute="trailing" constant="5" id="93d-rg-FZI"/>
+                <constraint firstItem="zit-u8-P2O" firstAttribute="top" secondItem="xgi-E8-lkN" secondAttribute="top" id="CRO-GZ-kFa"/>
+                <constraint firstItem="N2e-y5-l0M" firstAttribute="leading" secondItem="0wb-x2-ewF" secondAttribute="trailing" id="IZj-Je-dnk"/>
+                <constraint firstItem="MCa-M3-xqC" firstAttribute="leading" secondItem="xgi-E8-lkN" secondAttribute="leading" id="T1c-YO-cNr"/>
+                <constraint firstAttribute="bottom" secondItem="N2e-y5-l0M" secondAttribute="bottom" constant="-5" id="TNN-aQ-Z4u"/>
+                <constraint firstItem="N2e-y5-l0M" firstAttribute="top" secondItem="xgi-E8-lkN" secondAttribute="top" constant="-5" id="YC0-ln-k5V"/>
+                <constraint firstItem="MCa-M3-xqC" firstAttribute="top" secondItem="xgi-E8-lkN" secondAttribute="top" id="ZX7-Tv-W7g"/>
+                <constraint firstAttribute="bottom" secondItem="MCa-M3-xqC" secondAttribute="bottom" id="dsh-dp-dCd"/>
+                <constraint firstItem="5Qb-Hn-wqr" firstAttribute="top" secondItem="xgi-E8-lkN" secondAttribute="top" id="erJ-3S-bT7"/>
+                <constraint firstItem="Qxt-8j-DhU" firstAttribute="leading" secondItem="5Qb-Hn-wqr" secondAttribute="trailing" constant="10" id="hma-PS-S0n"/>
+                <constraint firstAttribute="bottom" secondItem="5Qb-Hn-wqr" secondAttribute="bottom" id="jeu-w8-Uyt"/>
+                <constraint firstItem="Qxt-8j-DhU" firstAttribute="top" secondItem="xgi-E8-lkN" secondAttribute="top" constant="5" id="k2K-Q8-3r4"/>
+                <constraint firstItem="5Qb-Hn-wqr" firstAttribute="leading" secondItem="xgi-E8-lkN" secondAttribute="leading" id="qeS-vh-zdI"/>
+                <constraint firstItem="0wb-x2-ewF" firstAttribute="leading" secondItem="5Qb-Hn-wqr" secondAttribute="trailing" constant="10" id="sqc-ad-jY3"/>
+                <constraint firstAttribute="bottom" secondItem="0wb-x2-ewF" secondAttribute="bottom" constant="2" id="ua7-mZ-wvd"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bgView" destination="MCa-M3-xqC" id="jK2-8v-vN8"/>
+                <outlet property="digitLabel" destination="zit-u8-P2O" id="xhi-dc-BXc"/>
+                <outlet property="giftDescLabel" destination="0wb-x2-ewF" id="nQ7-tn-GQF"/>
+                <outlet property="giftImageView" destination="N2e-y5-l0M" id="aDB-il-v6v"/>
+                <outlet property="iconImageView" destination="5Qb-Hn-wqr" id="1mg-vC-mbb"/>
+                <outlet property="senderLabel" destination="Qxt-8j-DhU" id="EcX-ln-5cN"/>
+            </connections>
+            <point key="canvasLocation" x="45" y="136"/>
+        </view>
+    </objects>
+</document>

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ChatToolsViewDelegate : class {
-    func chatToolsView(toolView : ChatToolsView, message : String)
+    func chatToolsView(_ toolView : ChatToolsView, message : String)
 }
 
 class ChatToolsView: UIView, XNibLoadable {
@@ -38,7 +38,7 @@ class ChatToolsView: UIView, XNibLoadable {
         inputTextField.text = ""
         sender.isEnabled = false
         
-        delegate?.chatToolsView(toolView: self, message: message)
+        delegate?.chatToolsView(self, message: message)
     }
 }
 

@@ -14,7 +14,7 @@ class XLiveViewModel {
 }
 
 extension XLiveViewModel {
-    func loadLiveData(type: XTitleModel, index: Int, finishedCallback:@escaping ()->()) {
+    func loadLiveData(_ type: XTitleModel, index: Int, finishedCallback:@escaping ()->()) {
         XNetworkTools.requestData(.get, URLString: "http://qf.56.com/home/v4/moreAnchor.ios", parameters: ["type" : type.type, "index" : index, "size" : 48], finishedCallback: { (result) -> Void in
             guard let resultDict = result as? [String : Any] else { return }
             guard let messageDict = resultDict["message"] as? [String : Any] else { return }

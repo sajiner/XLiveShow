@@ -11,7 +11,7 @@ import UIKit
 private let kGiftCellID = "kGiftCellID"
 
 protocol GiftListViewDelegate : class {
-    func giftListView(giftView : GiftListView, giftModel : GiftModel)
+    func giftListView(_ giftView : GiftListView, giftModel : GiftModel)
 }
 
 class GiftListView: UIView, XNibLoadable {
@@ -70,7 +70,7 @@ extension GiftListView {
     @IBAction func sendGiftBtnClick() {
         let package = giftVM.giftlistData[currentIndexPath!.section]
         let giftModel = package.list[currentIndexPath!.item]
-        delegate?.giftListView(giftView: self, giftModel: giftModel)
+        delegate?.giftListView(self, giftModel: giftModel)
     }
 }
 
