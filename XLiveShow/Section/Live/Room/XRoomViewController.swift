@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ProtocolBuffers
 
 private let kGiftlistViewHeight : CGFloat = kScreenHeight * 0.5
 private let kChatToolsViewHeight : CGFloat = 44
@@ -29,15 +30,30 @@ class XRoomViewController: UIViewController {
         let giftContainerView = XGiftContainerView(frame: CGRect(x: 0, y: 100, width: 250, height: 90), style: channelStyle)
         return giftContainerView
     }()
+    fileprivate lazy var socket: ZXSocket = ZXSocket(addr: "10.165.3.59", port: 8080)
+    fileprivate lazy var userModel: XUserModel = {
+       let userModel = XUserModel()
+        userModel.username = "sajiner_\(arc4random_uniform(10))"
+        userModel.userLever = Int(arc4random_uniform(50))
+        return userModel
+    }()
     
     // MARK: 对外提供控件属性
     var liveModel : XLiveListModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+      
         setupUI()
-        
+        /// 进入房间开始读取信息
+        if socket.connectServer() {
+            let user = socket.user
+            user.name = userModel.username
+            user.level = Int32(userModel.userLever)
+            socket.startReadMsg()
+            socket.sendJoinRoom()
+            socket.delegate = self
+        }
         // 设置内容
         setupAnchorInfo()
         
@@ -47,11 +63,13 @@ class XRoomViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
+        socket.sendLeaveRoom()
     }
 }
 
@@ -174,20 +192,38 @@ extension XRoomViewController {
 // MARK:- 监听用户输入的内容
 extension XRoomViewController : ChatToolsViewDelegate, GiftListViewDelegate {
     func chatToolsView(_ toolView: ChatToolsView, message: String) {
-        let msg = NSAttributedString(string: message)
-        
-        
-        chatContentView.messages.append(msg)
-        chatContentView.reloadData()
-        
+        socket.sendTextMsg(message)
     }
     
     func giftListView(_ giftView: GiftListView, giftModel: GiftModel) {
-
-        let model = XGiftModel(senderName: "sajiner", senderURL: "", giftName: giftModel.subject, giftURL: giftModel.img2)
-        giftContainerView.showGiftModel(model)
+        socket.sendGiftMsg(giftModel.subject, giftUrl: giftModel.img2, giftCount: 1)
     }
     
+}
+
+extension XRoomViewController: ZXSocketDelegate {
+    func socket(_ socket: ZXSocket, chatMsg: TextMessage) {
+        let msg = XAttrStringGenerator.generateTextMessage(userModel.username, chatMsg.text)
+        chatContentView.insertMsg(msg)
+    }
+    
+    func socket(_ socket: ZXSocket, giftMsg: GiftMessage) {
+        
+        let giftModel = XGiftModel(senderName: userModel.username, senderURL: "icon3", giftName: giftMsg.giftName, giftURL: giftMsg.giftUrl)
+        giftContainerView.showGiftModel(giftModel)
+        let msg = XAttrStringGenerator.generateGiftMessage(userModel.username, giftModel: giftModel)
+        chatContentView.insertMsg(msg)
+    }
+    
+    func socket(_ socket: ZXSocket, joinRoom user: UserInfo) {
+        let msg = XAttrStringGenerator.generateJoinLeaveRoomMessage(user.name, isJoin: true)
+        chatContentView.insertMsg(msg)
+    }
+    
+    func socket(_ socket: ZXSocket, leaveRoom user: UserInfo) {
+        let msg = XAttrStringGenerator.generateJoinLeaveRoomMessage(user.name, isJoin: false)
+        chatContentView.insertMsg(msg)
+    }
 }
 
 
