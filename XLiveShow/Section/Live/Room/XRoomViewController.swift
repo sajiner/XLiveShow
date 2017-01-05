@@ -37,6 +37,7 @@ class XRoomViewController: UIViewController {
         userModel.userLever = Int(arc4random_uniform(50))
         return userModel
     }()
+    fileprivate var heartTimer: Timer?
     
     // MARK: 对外提供控件属性
     var liveModel : XLiveListModel?
@@ -47,12 +48,16 @@ class XRoomViewController: UIViewController {
         setupUI()
         /// 进入房间开始读取信息
         if socket.connectServer() {
-            let user = socket.user
-            user.name = userModel.username
-            user.level = Int32(userModel.userLever)
+            let userBuilder = UserInfo.Builder()
+            userBuilder.name = userModel.username
+            userBuilder.level = Int32(userModel.userLever)
+            socket.userBuilder = userBuilder
+            
             socket.startReadMsg()
             socket.sendJoinRoom()
             socket.delegate = self
+            // 发送心跳包
+            addHeartBeatTimer()
         }
         // 设置内容
         setupAnchorInfo()
@@ -70,6 +75,24 @@ class XRoomViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
         socket.sendLeaveRoom()
+    }
+    
+    deinit {
+        heartTimer?.invalidate()
+        heartTimer = nil
+    }
+}
+
+//MARK: - 发送心跳包
+extension XRoomViewController {
+    fileprivate func addHeartBeatTimer() {
+        heartTimer = Timer(fireAt: Date(), interval: 10, target: self, selector: #selector(sendHeartBeat), userInfo: nil, repeats: true)
+        RunLoop.main.add(heartTimer!, forMode: .commonModes)
+        heartTimer?.fire()
+    }
+    
+    @objc private func sendHeartBeat() {
+        socket.sendHeartBeat()
     }
 }
 
@@ -192,7 +215,8 @@ extension XRoomViewController {
 // MARK:- 监听用户输入的内容
 extension XRoomViewController : ChatToolsViewDelegate, GiftListViewDelegate {
     func chatToolsView(_ toolView: ChatToolsView, message: String) {
-        socket.sendTextMsg(message)
+        let user = try! socket.userBuilder.build()
+        socket.sendTextMsg(message, user: user)
     }
     
     func giftListView(_ giftView: GiftListView, giftModel: GiftModel) {
@@ -203,15 +227,15 @@ extension XRoomViewController : ChatToolsViewDelegate, GiftListViewDelegate {
 
 extension XRoomViewController: ZXSocketDelegate {
     func socket(_ socket: ZXSocket, chatMsg: TextMessage) {
-        let msg = XAttrStringGenerator.generateTextMessage(userModel.username, chatMsg.text)
+        let msg = XAttrStringGenerator.generateTextMessage(chatMsg.user.name, chatMsg.text)
         chatContentView.insertMsg(msg)
     }
     
     func socket(_ socket: ZXSocket, giftMsg: GiftMessage) {
         
-        let giftModel = XGiftModel(senderName: userModel.username, senderURL: "icon3", giftName: giftMsg.giftName, giftURL: giftMsg.giftUrl)
+        let giftModel = XGiftModel(senderName: giftMsg.user.name, senderURL: "icon3", giftName: giftMsg.giftName, giftURL: giftMsg.giftUrl)
         giftContainerView.showGiftModel(giftModel)
-        let msg = XAttrStringGenerator.generateGiftMessage(userModel.username, giftModel: giftModel)
+        let msg = XAttrStringGenerator.generateGiftMessage(giftMsg.user.name, giftModel: giftModel)
         chatContentView.insertMsg(msg)
     }
     

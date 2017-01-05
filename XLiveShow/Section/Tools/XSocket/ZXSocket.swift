@@ -21,7 +21,7 @@ class ZXSocket {
     weak var delegate: ZXSocketDelegate?
     fileprivate var tcpClient : TCPClient
     
-    var user: UserInfo.Builder = UserInfo.Builder()
+    var userBuilder: UserInfo.Builder = UserInfo.Builder()
     
     init(addr: String, port: Int) {
         tcpClient = TCPClient(addr: addr, port: port)
@@ -76,15 +76,12 @@ extension ZXSocket {
         case 1, 4:
             let user = try! UserInfo.parseFrom(data: data)
             type == 1 ? delegate?.socket(self, joinRoom: user) : delegate?.socket(self, leaveRoom: user)
-            print(user.name)
         case 2:
             let giftMsg = try! GiftMessage.parseFrom(data: data)
             delegate?.socket(self, giftMsg: giftMsg)
-            print(giftMsg.giftName)
         case 3:
             let chatMsg = try! TextMessage.parseFrom(data: data)
             delegate?.socket(self, chatMsg: chatMsg)
-            print(chatMsg.text)
         default:
             print("未知类型")
         }
@@ -93,7 +90,7 @@ extension ZXSocket {
 
 extension ZXSocket {
     func sendJoinRoom() {
-        let msgData = (try! user.build()).data()
+        let msgData = (try! userBuilder.build()).data()
         sendMessage(msgData, type: 1)
     }
     
@@ -108,15 +105,22 @@ extension ZXSocket {
         sendMessage(giftData, type: 2)
     }
     
-    func sendTextMsg(_ message: String) {
+    func sendTextMsg(_ message: String, user: UserInfo) {
         let chatMsg = TextMessage.Builder()
         chatMsg.text = message
+        chatMsg.user = user
         let chatData = (try! chatMsg.build()).data()
         sendMessage(chatData, type: 3)
     }
     
     func sendLeaveRoom() {
-        let leaveData = (try! user.build()).data()
+        let leaveData = (try! userBuilder.build()).data()
         sendMessage(leaveData, type: 4)
+    }
+    
+    func sendHeartBeat() {
+        let message = "我还在连接哦"
+        let data = message.data(using: .utf8)
+        sendMessage(data!, type: 110)
     }
 }

@@ -59,9 +59,9 @@
 		AE371D131E1C8FCA0028538B /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = AE371D0D1E1C8FC90028538B /* yudpsocket.c */; };
 		AE371D141E1C8FCA0028538B /* yudpsocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE371D0E1E1C8FC90028538B /* yudpsocket.swift */; };
 		AE371D151E1C8FCA0028538B /* ZXSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE371D0F1E1C8FC90028538B /* ZXSocket.swift */; };
-		AE371D171E1C8FD70028538B /* Message.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE371D161E1C8FD70028538B /* Message.proto.swift */; };
 		AE371D191E1C91600028538B /* XUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE371D181E1C91600028538B /* XUserModel.swift */; };
 		AE371D1D1E1C95180028538B /* XAttrStringGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE371D1C1E1C95180028538B /* XAttrStringGenerator.swift */; };
+		AE371D3D1E1D25F10028538B /* Message.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE371D3C1E1D25F10028538B /* Message.proto.swift */; };
 		AEBC7CC11DFFBEAB00C6E137 /* types.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEBC7CC01DFFBEAB00C6E137 /* types.plist */; };
 		AEBC7CCF1DFFC2CC00C6E137 /* XTitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBC7CCE1DFFC2CC00C6E137 /* XTitleModel.swift */; };
 		AEBC7CD51DFFC4C600C6E137 /* XContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBC7CD11DFFC4C600C6E137 /* XContentView.swift */; };
@@ -141,9 +141,9 @@
 		AE371D0D1E1C8FC90028538B /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = "<group>"; };
 		AE371D0E1E1C8FC90028538B /* yudpsocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yudpsocket.swift; sourceTree = "<group>"; };
 		AE371D0F1E1C8FC90028538B /* ZXSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXSocket.swift; sourceTree = "<group>"; };
-		AE371D161E1C8FD70028538B /* Message.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.proto.swift; sourceTree = "<group>"; };
 		AE371D181E1C91600028538B /* XUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XUserModel.swift; sourceTree = "<group>"; };
 		AE371D1C1E1C95180028538B /* XAttrStringGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XAttrStringGenerator.swift; sourceTree = "<group>"; };
+		AE371D3C1E1D25F10028538B /* Message.proto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.proto.swift; sourceTree = "<group>"; };
 		AEBC7CC01DFFBEAB00C6E137 /* types.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = types.plist; sourceTree = "<group>"; };
 		AEBC7CCE1DFFC2CC00C6E137 /* XTitleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTitleModel.swift; sourceTree = "<group>"; };
 		AEBC7CD11DFFC4C600C6E137 /* XContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XContentView.swift; sourceTree = "<group>"; };
@@ -262,9 +262,9 @@
 			children = (
 				AE2130FB1DFF90490050C099 /* Section */,
 				AE2131041DFF92210050C099 /* LaunchScreen.storyboard */,
+				AE371D3C1E1D25F10028538B /* Message.proto.swift */,
 				AE21311B1DFFB74F0050C099 /* XConst.swift */,
 				AE2130E91DFEF16A0050C099 /* AppDelegate.swift */,
-				AE371D161E1C8FD70028538B /* Message.proto.swift */,
 				AE2130F01DFEF16A0050C099 /* Assets.xcassets */,
 				AE2130F51DFEF16A0050C099 /* Info.plist */,
 			);
@@ -609,6 +609,7 @@
 				AE18F5EF1E024479008297E7 /* GiftModel.swift in Sources */,
 				AE2131021DFF91500050C099 /* XTabBarController.swift in Sources */,
 				AE06E76F1E08FD510018C162 /* XChatContentView.swift in Sources */,
+				AE371D3D1E1D25F10028538B /* Message.proto.swift in Sources */,
 				AE21311A1DFFA58F0050C099 /* XMyAttensionViewController.swift in Sources */,
 				AE21310F1DFF94FE0050C099 /* XRankViewController.swift in Sources */,
 				AE371D141E1C8FCA0028538B /* yudpsocket.swift in Sources */,
@@ -651,7 +652,6 @@
 				AE06E7781E0909C30018C162 /* XGiftChannelView.swift in Sources */,
 				AE18F60A1E025C0A008297E7 /* EmoticonViewModel.swift in Sources */,
 				AEBC7CF81E00E3A800C6E137 /* XLiveViewModel.swift in Sources */,
-				AE371D171E1C8FD70028538B /* Message.proto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

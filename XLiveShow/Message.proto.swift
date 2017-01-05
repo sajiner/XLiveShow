@@ -300,6 +300,7 @@ final public class TextMessage : GeneratedMessage {
     }
     var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
     fieldCheck = fieldCheck && (lhs.hasText == rhs.hasText) && (!lhs.hasText || lhs.text == rhs.text)
+    fieldCheck = fieldCheck && (lhs.hasUser == rhs.hasUser) && (!lhs.hasUser || lhs.user == rhs.user)
     fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
     return fieldCheck
   }
@@ -307,6 +308,8 @@ final public class TextMessage : GeneratedMessage {
   public fileprivate(set) var text:String = ""
   public fileprivate(set) var hasText:Bool = false
 
+  public fileprivate(set) var user:UserInfo!
+  public fileprivate(set) var hasUser:Bool = false
   required public init() {
        super.init()
   }
@@ -314,11 +317,20 @@ final public class TextMessage : GeneratedMessage {
     if !hasText {
       return false
     }
+    if !hasUser {
+      return false
+    }
+    if !user.isInitialized() {
+      return false
+    }
    return true
   }
   override public func writeTo(codedOutputStream: CodedOutputStream) throws {
     if hasText {
       try codedOutputStream.writeString(fieldNumber: 1, value:text)
+    }
+    if hasUser {
+      try codedOutputStream.writeMessage(fieldNumber: 2, value:user)
     }
     try unknownFields.writeTo(codedOutputStream: codedOutputStream)
   }
@@ -331,6 +343,11 @@ final public class TextMessage : GeneratedMessage {
     serialize_size = 0
     if hasText {
       serialize_size += text.computeStringSize(fieldNumber: 1)
+    }
+    if hasUser {
+        if let varSizeuser = user?.computeMessageSize(fieldNumber: 2) {
+            serialize_size += varSizeuser
+        }
     }
     serialize_size += unknownFields.serializedSize()
     memoizedSerializedSize = serialize_size
@@ -363,6 +380,9 @@ final public class TextMessage : GeneratedMessage {
     if hasText {
       jsonMap["text"] = text
     }
+    if hasUser {
+      jsonMap["user"] = try user.encode()
+    }
     return jsonMap
   }
   override class public func decode(jsonMap:Dictionary<String,Any>) throws -> TextMessage {
@@ -376,6 +396,13 @@ final public class TextMessage : GeneratedMessage {
     if hasText {
       output += "\(indent) text: \(text) \n"
     }
+    if hasUser {
+      output += "\(indent) user {\n"
+      if let outDescUser = user {
+        output += try outDescUser.getDescription(indent: "\(indent)  ")
+      }
+      output += "\(indent) }\n"
+    }
     output += unknownFields.getDescription(indent: indent)
     return output
   }
@@ -384,6 +411,11 @@ final public class TextMessage : GeneratedMessage {
           var hashCode:Int = 7
           if hasText {
              hashCode = (hashCode &* 31) &+ text.hashValue
+          }
+          if hasUser {
+              if let hashValueuser = user?.hashValue {
+                  hashCode = (hashCode &* 31) &+ hashValueuser
+              }
           }
           hashCode = (hashCode &* 31) &+  unknownFields.hashValue
           return hashCode
@@ -435,6 +467,60 @@ final public class TextMessage : GeneratedMessage {
          builderResult.text = ""
          return self
     }
+    public var hasUser:Bool {
+         get {
+             return builderResult.hasUser
+         }
+    }
+    public var user:UserInfo! {
+         get {
+             if userBuilder_ != nil {
+                builderResult.user = userBuilder_.getMessage()
+             }
+             return builderResult.user
+         }
+         set (value) {
+             builderResult.hasUser = true
+             builderResult.user = value
+         }
+    }
+    fileprivate var userBuilder_:UserInfo.Builder! {
+         didSet {
+            builderResult.hasUser = true
+         }
+    }
+    public func getUserBuilder() -> UserInfo.Builder {
+      if userBuilder_ == nil {
+         userBuilder_ = UserInfo.Builder()
+         builderResult.user = userBuilder_.getMessage()
+         if user != nil {
+            try! userBuilder_.mergeFrom(other: user)
+         }
+      }
+      return userBuilder_
+    }
+    @discardableResult
+    public func setUser(_ value:UserInfo!) -> TextMessage.Builder {
+      self.user = value
+      return self
+    }
+    @discardableResult
+    public func mergeUser(value:UserInfo) throws -> TextMessage.Builder {
+      if builderResult.hasUser {
+        builderResult.user = try UserInfo.builderWithPrototype(prototype:builderResult.user).mergeFrom(other: value).buildPartial()
+      } else {
+        builderResult.user = value
+      }
+      builderResult.hasUser = true
+      return self
+    }
+    @discardableResult
+    public func clearUser() -> TextMessage.Builder {
+      userBuilder_ = nil
+      builderResult.hasUser = false
+      builderResult.user = nil
+      return self
+    }
     override public var internalGetResult:GeneratedMessage {
          get {
             return builderResult
@@ -464,6 +550,9 @@ final public class TextMessage : GeneratedMessage {
       if other.hasText {
            text = other.text
       }
+      if (other.hasUser) {
+          try mergeUser(value: other.user)
+      }
       try merge(unknownField: other.unknownFields)
       return self
     }
@@ -484,6 +573,14 @@ final public class TextMessage : GeneratedMessage {
         case 10:
           text = try codedInputStream.readString()
 
+        case 18:
+          let subBuilder:UserInfo.Builder = UserInfo.Builder()
+          if hasUser {
+            try subBuilder.mergeFrom(other: user)
+          }
+          try codedInputStream.readMessage(builder: subBuilder, extensionRegistry:extensionRegistry)
+          user = subBuilder.buildPartial()
+
         default:
           if (!(try parse(codedInputStream:codedInputStream, unknownFields:unknownFieldsBuilder, extensionRegistry:extensionRegistry, tag:protobufTag))) {
              unknownFields = try unknownFieldsBuilder.build()
@@ -496,6 +593,10 @@ final public class TextMessage : GeneratedMessage {
       let resultDecodedBuilder = TextMessage.Builder()
       if let jsonValueText = jsonMap["text"] as? String {
         resultDecodedBuilder.text = jsonValueText
+      }
+      if let jsonValueUser = jsonMap["user"] as? Dictionary<String,Any> {
+        resultDecodedBuilder.user = try UserInfo.Builder.decodeToBuilder(jsonMap:jsonValueUser).build()
+
       }
       return resultDecodedBuilder
     }
@@ -520,6 +621,7 @@ final public class GiftMessage : GeneratedMessage {
     fieldCheck = fieldCheck && (lhs.hasGiftName == rhs.hasGiftName) && (!lhs.hasGiftName || lhs.giftName == rhs.giftName)
     fieldCheck = fieldCheck && (lhs.hasGiftUrl == rhs.hasGiftUrl) && (!lhs.hasGiftUrl || lhs.giftUrl == rhs.giftUrl)
     fieldCheck = fieldCheck && (lhs.hasGiftCount == rhs.hasGiftCount) && (!lhs.hasGiftCount || lhs.giftCount == rhs.giftCount)
+    fieldCheck = fieldCheck && (lhs.hasUser == rhs.hasUser) && (!lhs.hasUser || lhs.user == rhs.user)
     fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
     return fieldCheck
   }
@@ -533,6 +635,8 @@ final public class GiftMessage : GeneratedMessage {
   public fileprivate(set) var giftCount:Int32 = Int32(0)
   public fileprivate(set) var hasGiftCount:Bool = false
 
+  public fileprivate(set) var user:UserInfo!
+  public fileprivate(set) var hasUser:Bool = false
   required public init() {
        super.init()
   }
@@ -546,6 +650,12 @@ final public class GiftMessage : GeneratedMessage {
     if !hasGiftCount {
       return false
     }
+    if !hasUser {
+      return false
+    }
+    if !user.isInitialized() {
+      return false
+    }
    return true
   }
   override public func writeTo(codedOutputStream: CodedOutputStream) throws {
@@ -557,6 +667,9 @@ final public class GiftMessage : GeneratedMessage {
     }
     if hasGiftCount {
       try codedOutputStream.writeInt32(fieldNumber: 3, value:giftCount)
+    }
+    if hasUser {
+      try codedOutputStream.writeMessage(fieldNumber: 4, value:user)
     }
     try unknownFields.writeTo(codedOutputStream: codedOutputStream)
   }
@@ -575,6 +688,11 @@ final public class GiftMessage : GeneratedMessage {
     }
     if hasGiftCount {
       serialize_size += giftCount.computeInt32Size(fieldNumber: 3)
+    }
+    if hasUser {
+        if let varSizeuser = user?.computeMessageSize(fieldNumber: 4) {
+            serialize_size += varSizeuser
+        }
     }
     serialize_size += unknownFields.serializedSize()
     memoizedSerializedSize = serialize_size
@@ -613,6 +731,9 @@ final public class GiftMessage : GeneratedMessage {
     if hasGiftCount {
       jsonMap["giftCount"] = Int(giftCount)
     }
+    if hasUser {
+      jsonMap["user"] = try user.encode()
+    }
     return jsonMap
   }
   override class public func decode(jsonMap:Dictionary<String,Any>) throws -> GiftMessage {
@@ -632,6 +753,13 @@ final public class GiftMessage : GeneratedMessage {
     if hasGiftCount {
       output += "\(indent) giftCount: \(giftCount) \n"
     }
+    if hasUser {
+      output += "\(indent) user {\n"
+      if let outDescUser = user {
+        output += try outDescUser.getDescription(indent: "\(indent)  ")
+      }
+      output += "\(indent) }\n"
+    }
     output += unknownFields.getDescription(indent: indent)
     return output
   }
@@ -646,6 +774,11 @@ final public class GiftMessage : GeneratedMessage {
           }
           if hasGiftCount {
              hashCode = (hashCode &* 31) &+ giftCount.hashValue
+          }
+          if hasUser {
+              if let hashValueuser = user?.hashValue {
+                  hashCode = (hashCode &* 31) &+ hashValueuser
+              }
           }
           hashCode = (hashCode &* 31) &+  unknownFields.hashValue
           return hashCode
@@ -747,6 +880,60 @@ final public class GiftMessage : GeneratedMessage {
          builderResult.giftCount = Int32(0)
          return self
     }
+    public var hasUser:Bool {
+         get {
+             return builderResult.hasUser
+         }
+    }
+    public var user:UserInfo! {
+         get {
+             if userBuilder_ != nil {
+                builderResult.user = userBuilder_.getMessage()
+             }
+             return builderResult.user
+         }
+         set (value) {
+             builderResult.hasUser = true
+             builderResult.user = value
+         }
+    }
+    fileprivate var userBuilder_:UserInfo.Builder! {
+         didSet {
+            builderResult.hasUser = true
+         }
+    }
+    public func getUserBuilder() -> UserInfo.Builder {
+      if userBuilder_ == nil {
+         userBuilder_ = UserInfo.Builder()
+         builderResult.user = userBuilder_.getMessage()
+         if user != nil {
+            try! userBuilder_.mergeFrom(other: user)
+         }
+      }
+      return userBuilder_
+    }
+    @discardableResult
+    public func setUser(_ value:UserInfo!) -> GiftMessage.Builder {
+      self.user = value
+      return self
+    }
+    @discardableResult
+    public func mergeUser(value:UserInfo) throws -> GiftMessage.Builder {
+      if builderResult.hasUser {
+        builderResult.user = try UserInfo.builderWithPrototype(prototype:builderResult.user).mergeFrom(other: value).buildPartial()
+      } else {
+        builderResult.user = value
+      }
+      builderResult.hasUser = true
+      return self
+    }
+    @discardableResult
+    public func clearUser() -> GiftMessage.Builder {
+      userBuilder_ = nil
+      builderResult.hasUser = false
+      builderResult.user = nil
+      return self
+    }
     override public var internalGetResult:GeneratedMessage {
          get {
             return builderResult
@@ -782,6 +969,9 @@ final public class GiftMessage : GeneratedMessage {
       if other.hasGiftCount {
            giftCount = other.giftCount
       }
+      if (other.hasUser) {
+          try mergeUser(value: other.user)
+      }
       try merge(unknownField: other.unknownFields)
       return self
     }
@@ -808,6 +998,14 @@ final public class GiftMessage : GeneratedMessage {
         case 24:
           giftCount = try codedInputStream.readInt32()
 
+        case 34:
+          let subBuilder:UserInfo.Builder = UserInfo.Builder()
+          if hasUser {
+            try subBuilder.mergeFrom(other: user)
+          }
+          try codedInputStream.readMessage(builder: subBuilder, extensionRegistry:extensionRegistry)
+          user = subBuilder.buildPartial()
+
         default:
           if (!(try parse(codedInputStream:codedInputStream, unknownFields:unknownFieldsBuilder, extensionRegistry:extensionRegistry, tag:protobufTag))) {
              unknownFields = try unknownFieldsBuilder.build()
@@ -826,6 +1024,10 @@ final public class GiftMessage : GeneratedMessage {
       }
       if let jsonValueGiftCount = jsonMap["giftCount"] as? Int {
         resultDecodedBuilder.giftCount = Int32(jsonValueGiftCount)
+      }
+      if let jsonValueUser = jsonMap["user"] as? Dictionary<String,Any> {
+        resultDecodedBuilder.user = try UserInfo.Builder.decodeToBuilder(jsonMap:jsonValueUser).build()
+
       }
       return resultDecodedBuilder
     }
